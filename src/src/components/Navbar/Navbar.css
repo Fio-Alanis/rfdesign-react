@@ -1,0 +1,28 @@
+.RFD {
+    padding: 10px;
+    max-width: 980px;
+    margin: 0 auto;
+    color: red;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.boton {
+    text-decoration: none;
+    margin-left: 10px;
+    color: red;
+    border-radius: 5px;
+    background-color: #242424;
+    padding: 5px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.cartLogo {
+    width: 20px;
+}
