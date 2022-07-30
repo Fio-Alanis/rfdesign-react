@@ -1,38 +1,31 @@
-import { useState, useEffect } from 'react'
+import { useState } from "react";
 
-const Counter = ({show, stock, initial, onAdd}) => {
-    const [count, setCount] = useState(0)
+const Counter = ({ stock, initial, onAdd }) => {
+  // Como valor inicial del contador usamos la prop initial.
+  const [count, setCount] = useState(initial);
 
-    useEffect(() => {
-      console.log('function callback useEffect')
+  const decrement = () => {
+    // Si el contador es igual al valor inicial no tengo que permitir restar.
+    if (count === initial) return;
 
-      return () => console.log('el componente va a desmontarse')
-    }, [show])
+    setCount(count - 1);
+  };
 
-   // useEffect(() => {
-   //   console.log('se actualizo el estado count')
-   // }, [count])
+  const increment = () => {
+    // Si el contador es igual al stock no tengo que permitir sumar.
+    if (count === stock) return;
 
-    const decrement = () => {
-      if(count > initial)
-         setCount(count - 1)
-    }
+    setCount(count + 1);
+  };
 
-    const increment = () => {
-       if(count < stock)
-         setCount(count + 1)
-    }
-   console.log('va a renderizar')
-   return (
-        <div>
-            <h1>{count}</h1>
-            <button onClick={decrement}>-</button>
-            <button onClick={increment}>+</button>
-            <button onClick={() => onAdd(count)}>Agregar al carrito</button>
-        </div>
-   )
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={decrement}>-</button>
+      <button onClick={increment}>+</button>
+      <button onClick={() => onAdd(count)}>Agregar al carrito</button>
+    </div>
+  );
+};
 
-   
-}
-
-export default Counter
+export default Counter;
