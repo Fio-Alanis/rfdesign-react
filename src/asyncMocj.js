@@ -16,7 +16,7 @@ const products = [
         category: 'standar',
         img: 'https://www.google.com/search?q=asthetic+design&tbm=isch&ved=2ahUKEwiDvs2UnpL5AhU3OLkGHdIMClsQ2-cCegQIABAA&oq=asthetic+design&gs_lcp=CgNpbWcQAzIECAAQEzIECAAQEzIECAAQEzIICAAQHhAHEBMyCAgAEB4QBxATMggIABAeEAcQEzIICAAQHhAHEBMyCAgAEB4QBxATMggIABAeEAcQEzIICAAQHhAHEBM6BAgjECc6BAgAEEM6BQgAEIAEOgYIABAeEAdQmAVYxDRg5zZoAnAAeACAAaQDiAHOC5IBCTkuMS4xLjAuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=OprdYoO5D7fw5OUP0pmo2AU&bih=722&biw=767#imgrc=0uv0BHzjTFwXUM&imgdii=M3smPNvbnWxS8M',
         stock: 5,
-        description: 'Descripción del pack 1'
+        description: 'Descripción del pack 2'
     },
 
     {
@@ -26,7 +26,7 @@ const products = [
         category: 'luxe',
         img: 'https://www.google.com/search?q=asthetic+design&tbm=isch&ved=2ahUKEwiDvs2UnpL5AhU3OLkGHdIMClsQ2-cCegQIABAA&oq=asthetic+design&gs_lcp=CgNpbWcQAzIECAAQEzIECAAQEzIECAAQEzIICAAQHhAHEBMyCAgAEB4QBxATMggIABAeEAcQEzIICAAQHhAHEBMyCAgAEB4QBxATMggIABAeEAcQEzIICAAQHhAHEBM6BAgjECc6BAgAEEM6BQgAEIAEOgYIABAeEAdQmAVYxDRg5zZoAnAAeACAAaQDiAHOC5IBCTkuMS4xLjAuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=OprdYoO5D7fw5OUP0pmo2AU&bih=722&biw=767#imgrc=aFLZtbwOXQNR6M',
         stock: 2,
-        description: 'Descripción del pack 1'
+        description: 'Descripción del pack 3'
     },
 ]
 
@@ -38,3 +38,13 @@ const products = [
             }, 2000)
         })
     }
+
+    export const getProductById = (id) => {
+        return new  Promise((resolve => {
+            setTimeout(() => {
+                resolve(products.find(prod => {
+                    console.log(prod.id === id)
+                    return prod.id === id
+                }))
+            }, 500)
+        })
